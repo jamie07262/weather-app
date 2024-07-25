@@ -45,7 +45,7 @@ main {
 }
 #icon {
   font-size: 40px;
-  margin-top: 18px;
+  margin-top: 0px;
 }
 #temp-value {
   font-size: 80px;

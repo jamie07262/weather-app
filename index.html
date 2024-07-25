@@ -30,14 +30,20 @@
         <div class="details">
           <h1 class="city">San Fernando</h1>
           <p class="weather-details">
-            Wednesday 11:00, scattered clouds
+            <span class="current-date-time">Wednesday 11:00</span>,
+            <span class="description">light rain</span>
             <br />
-            Humidity: <strong class="unit">80%</strong>, Wind:
-            <strong class="unit">3.10 km/h</strong>
+            Humidity: <strong class="humidity">55%</strong>, Wind:
+            <strong class="wind">3.52 km/h</strong>
           </p>
         </div>
         <div class="temperature-container">
-          <div id="icon">🌤️</div>
+          <div id="icon">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              alt="rain-day"
+            />
+          </div>
           <div id="temp-value">24</div>
           <div id="temp-unit">°C</div>
         </div>
