@@ -4,42 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input
-          type="search"
-          id="search-engine"
-          placeholder="Enter a city.."
-          required
-        />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div class="details">
-        <h1>San Fernando</h1>
+    <div class="container">
+      <header>
+        <form class="search-form">
+          <input
+            type="search"
+            id="search-engine"
+            placeholder="Enter a city.."
+            required
+          />
+          <input type="submit" value="Search" class="search-btn" />
+        </form>
+      </header>
+      <main>
+        <div class="details">
+          <h1 class="city">San Fernando</h1>
+          <p class="weather-details">
+            Wednesday 11:00, scattered clouds
+            <br />
+            Humidity: <strong class="unit">80%</strong>, Wind:
+            <strong class="unit">3.10 km/h</strong>
+          </p>
+        </div>
+        <div class="temperature-container">
+          <div id="icon">🌤️</div>
+          <div id="temp-value">24</div>
+          <div id="temp-unit">°C</div>
+        </div>
+      </main>
+      <footer>
         <p>
-          Wednesday 11:00, scattered clouds
-          <br />
-          Humidity: 80%, Wind: 3.10 km/h
+          This project was coded by
+          <a href="https://github.com/jamie07262">Franchesca James</a>
+          is open-sourced on
+          <a href="https://github.com/jamie07262/weather-app">Github</a>
+          and hosted on
+          <a href="https://weather-appproject-shecodes.netlify.app/">Netlify</a>
         </p>
-      </div>
-      <div class="temperature">🌤️ 24°C</div>
-    </main>
-    <footer>
-      <p>
-        This project was coded by
-        <a href="https://github.com/jamie07262">Franchesca James</a>
-        is open-sourced on
-        <a href="https://github.com/jamie07262/weather-app">Github</a>
-        and hosted on
-        <a href="https://weather-appproject-shecodes.netlify.app/">Netlify</a>
-      </p>
-    </footer>
+      </footer>
+    </div>
   </body>
   <script src="index.js"></script>
 </html>
