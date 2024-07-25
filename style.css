@@ -1,5 +1,5 @@
 a {
-  color: rgba(32, 69, 101, 0.959);
+  color: rgb(15, 33, 84);
   text-decoration: none;
 }
 
@@ -8,9 +8,6 @@ main {
   justify-content: space-between;
 }
 
-.unit {
-  color: black;
-}
 .container {
   display: block;
   margin: 50px;
@@ -32,21 +29,15 @@ main {
   font-style: normal;
 }
 
-#search-engine {
-  background-color: rgba(244, 243, 244, 0.949);
-  border: none;
-  border-radius: 3px;
-  width: 80%;
-  padding: 15px 20px;
-}
-
 .temperature-container {
   display: flex;
 }
+
 #icon {
   font-size: 40px;
   margin-top: 0px;
 }
+
 #temp-value {
   font-size: 80px;
   font-weight: bold;
@@ -57,8 +48,17 @@ main {
   margin-top: 16px;
   font-size: 25px;
 }
+
+.search-engine {
+  background-color: rgba(0, 0, 0, 0.086);
+  border: none;
+  border-radius: 3px;
+  width: 80%;
+  padding: 15px 20px;
+}
+
 .search-btn {
-  background-color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.086);
   padding: 15px 20px;
   border: none;
   border-radius: 3px;
@@ -66,9 +66,14 @@ main {
   font-weight: 600;
 }
 
+.search-btn:hover {
+  background-color: rgba(245, 245, 245, 0.138);
+  cursor: pointer;
+}
+
 .search-form {
   margin-bottom: 40px;
-  border-bottom: 1px solid #f9f7fe81;
+  border-bottom: 1px solid rgba(249, 247, 254, 0.506);
   padding-bottom: 15px;
 }
 .city {
@@ -80,12 +85,19 @@ main {
 .weather-details {
   font-size: 15px;
   line-height: 20px;
+  color: rgba(0, 0, 0, 0.588);
 }
+
+.humidity,
+.wind {
+  color: rgb(12, 86, 125);
+}
+
 footer {
   text-align: center;
-  border-top: 1px solid #f9f7fe81;
+  border-top: 1px solid rgba(249, 247, 254, 0.506);
   padding: 10px 0 0 0;
   margin-top: 20px;
   font-size: 13px;
-  color: rgb(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.481);
 }

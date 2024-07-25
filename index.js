@@ -1,11 +1,17 @@
+//getting user input
 function displayCity(event) {
   event.preventDefault();
 
-  let searchEl = document.querySelector("#search-engine");
+  let searchEl = document.querySelector(".search-engine");
   let city = searchEl.value;
 
+  searchCity(city);
+}
+
+//integrating api
+function searchCity(city) {
   const apiKey = `45c3d6bd4taca0f84e6675fodff345f4`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayInfo);
 }
@@ -20,18 +26,21 @@ function displayInfo(response) {
   const detailsEl = document.querySelector(".description");
   const iconEl = document.querySelector("#icon");
 
+  const timeEl = document.querySelector(".current-date-time");
+  let date = new Date(response.data.time * 1000);
+
   cityEl.innerHTML = response.data.city;
   detailsEl.innerHTML = response.data.condition.description;
-  humidityEl.innerHTML = response.data.temperature.humidity + `%`;
+  timeEl.innerHTML = currentTime(date);
+  humidityEl.innerHTML = `${response.data.temperature.humidity}%`;
 
-  windEl.innerHTML = response.data.wind.speed + ` km/h`;
+  windEl.innerHTML = `${response.data.wind.speed} km/h`;
   iconEl.innerHTML = `<img src= ${response.data.condition.icon_url} alt= ${response.data.condition.icon}/>`;
   temperatureEl.innerHTML = Math.round(response.data.temperature.current);
 }
 
 //rendering data and time
-function currentTime() {
-  let now = new Date();
+function currentTime(date) {
   let days = [
     "Sunday",
     "Monday",
@@ -42,15 +51,19 @@ function currentTime() {
     "Saturday",
   ];
 
-  let day = days[now.getDay()];
-  let hour = now.getHours();
-  let minutes = now.getMinutes();
+  let day = days[date.getDay()];
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
 
-  const timeEl = document.querySelector(".current-date-time");
-  timeEl.innerHTML = `${day} ${hour}:${minutes}`;
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let formattedDate = `${day} ${hour}:${minutes}`;
+  return formattedDate;
 }
 
 let formEl = document.querySelector(".search-form");
 formEl.addEventListener("click", displayCity);
 
-currentTime();
+searchCity("San Fernando");
