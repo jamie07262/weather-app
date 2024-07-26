@@ -67,3 +67,25 @@ let formEl = document.querySelector(".search-form");
 formEl.addEventListener("click", displayCity);
 
 searchCity("San Fernando");
+
+//injecting forecast
+function displayForecast() {
+  const forecastEl = document.querySelector(".weather-forecast");
+  let forecast = "";
+  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  days.forEach(function (day) {
+    forecast += `<div class="forecast">
+            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-icon">🌤️</div>
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temp"><strong>28°C</strong></div>
+              <div class="weather-forecast-temp">18°C</div>
+            </div>
+          </div>`;
+  });
+
+  forecastEl.innerHTML = forecast;
+}
+
+displayForecast();
