@@ -3,11 +3,6 @@ a {
   text-decoration: none;
 }
 
-main {
-  display: flex;
-  justify-content: space-between;
-}
-
 .container {
   display: block;
   margin: 50px;
@@ -27,6 +22,11 @@ main {
   box-shadow: 1px 1px 10px 0px rgba(74, 72, 74, 1);
   font-family: "Inter", sans-serif;
   font-style: normal;
+}
+
+.weather-data {
+  display: flex;
+  justify-content: space-between;
 }
 
 .temperature-container {
@@ -90,6 +90,35 @@ main {
 
 .humidity,
 .wind {
+  color: rgb(12, 86, 125);
+}
+
+.weather-forecast {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 45px;
+}
+
+.weather-forecast-day {
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.588);
+}
+
+.weather-forecast-icon {
+  text-align: center;
+  font-size: 15px;
+}
+
+.weather-forecast-temperatures {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 20px;
   color: rgb(12, 86, 125);
 }
 
