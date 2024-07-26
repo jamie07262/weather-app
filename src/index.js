@@ -37,6 +37,8 @@ function displayInfo(response) {
   windEl.innerHTML = `${response.data.wind.speed} km/h`;
   iconEl.innerHTML = `<img src= ${response.data.condition.icon_url} alt= ${response.data.condition.icon}/>`;
   temperatureEl.innerHTML = Math.round(response.data.temperature.current);
+
+  getForecast(response.data.city);
 }
 
 //rendering data and time
@@ -63,29 +65,60 @@ function currentTime(date) {
   return formattedDate;
 }
 
-let formEl = document.querySelector(".search-form");
-formEl.addEventListener("click", displayCity);
+//getting the day for forecast
+function formatDay(time) {
+  let date = new Date(time * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-searchCity("San Fernando");
+  return days[date.getDay()];
+}
+
+//api for forecast
+function getForecast(city) {
+  const apiKey = `45c3d6bd4taca0f84e6675fodff345f4`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //injecting forecast
-function displayForecast() {
+function displayForecast(response) {
   const forecastEl = document.querySelector(".weather-forecast");
   let forecast = "";
-  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  days.forEach(function (day) {
-    forecast += `<div class="forecast">
-            <div class="weather-forecast-day">${day}</div>
-            <div class="weather-forecast-icon">🌤️</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecast += `<div class="forecast">
+            <div class="weather-forecast-day">${formatDay(day.time)}</div>
+            <div><img class="weather-forecast-icon" src= ${
+              day.condition.icon_url
+            } alt = ${day.condition.icon}/></div>
             <div class="weather-forecast-temperatures">
-              <div class="weather-forecast-temp"><strong>28°C</strong></div>
-              <div class="weather-forecast-temp">18°C</div>
+              <div class="weather-forecast-temp"><strong>${Math.round(
+                day.temperature.maximum
+              )}°C</strong></div>
+              <div class="weather-forecast-temp">${Math.round(
+                day.temperature.minimum
+              )}°C</div>
             </div>
           </div>`;
+    }
   });
 
   forecastEl.innerHTML = forecast;
 }
+
+let formEl = document.querySelector(".search-form");
+formEl.addEventListener("click", displayCity);
+
+searchCity("San Fernando");
 
 displayForecast();
