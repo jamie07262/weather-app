@@ -16,8 +16,8 @@ a {
   padding: 30px;
   border: none;
   border-radius: 16px;
-  max-width: 600px;
-  min-width: 400px;
+  max-width: 90%;
+  width: 600px;
   margin: 45px auto;
   box-shadow: 1px 1px 10px 0px rgba(74, 72, 74, 1);
   font-family: "Inter", sans-serif;
@@ -53,7 +53,7 @@ a {
   background-color: rgba(0, 0, 0, 0.086);
   border: none;
   border-radius: 3px;
-  width: 80%;
+  width: 75%;
   padding: 15px 20px;
 }
 
@@ -64,6 +64,8 @@ a {
   border-radius: 3px;
   margin-left: 8px;
   font-weight: 600;
+  width: 20%;
+  text-align: center;
 }
 
 .search-btn:hover {
@@ -76,6 +78,7 @@ a {
   border-bottom: 1px solid rgba(249, 247, 254, 0.506);
   padding-bottom: 15px;
 }
+
 .city {
   margin: 0;
   font-size: 38px;
@@ -98,11 +101,12 @@ a {
   justify-content: center;
   padding-top: 50px;
   gap: 45px;
+  flex-wrap: wrap;
 }
 
 .weather-forecast-day {
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
   color: rgba(0, 0, 0, 0.588);
 }
@@ -115,7 +119,7 @@ a {
 .weather-forecast-temperatures {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   text-align: center;
   font-size: 13px;
   line-height: 20px;
