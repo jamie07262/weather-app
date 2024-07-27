@@ -57,6 +57,11 @@ a {
   padding: 15px 20px;
 }
 
+.search-engine::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .search-btn {
   background-color: rgba(0, 0, 0, 0.086);
   padding: 15px 20px;

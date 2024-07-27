@@ -5,7 +5,10 @@ function displayCity(event) {
   let searchEl = document.querySelector(".search-engine");
   let city = searchEl.value;
 
-  searchCity(city);
+  if (city.trim() !== "") {
+    searchCity(city);
+    searchEl.value = "";
+  }
 }
 
 //integrating api
