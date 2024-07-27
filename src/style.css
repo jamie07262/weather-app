@@ -6,12 +6,12 @@ a {
 .container {
   display: block;
   margin: 50px;
-  background: rgb(34, 193, 195);
+  background: rgb(22, 181, 175);
   background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(45, 193, 188, 1) 4%,
-    rgba(253, 187, 45, 1) 100%
+    180deg,
+    rgba(22, 181, 175, 0.9063958347010679) 0%,
+    rgba(25, 192, 186, 0.917600316493785) 4%,
+    rgba(233, 203, 8, 0.8419700643929446) 100%
   );
   padding: 30px;
   border: none;
