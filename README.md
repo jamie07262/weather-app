@@ -13,7 +13,7 @@ Tech Stack
 -  API: [SheCodes Weather API](https://www.shecodes.io/learn/apis/weather)
 
 ### Demo
-Explore the live version of the app hosted on Netlify by clicking [here](https://app.netlify.com/sites/weather-appproject-shecodes/overview)
+Explore the live version of the app hosted on Netlify by clicking [here](https://weather-appproject-shecodes.netlify.app/)
 
 ### Usage
 
